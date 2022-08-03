@@ -1,6 +1,6 @@
 # GIF Searcher
 
-<p> A simple GIF searcher based on Giphy API, which is a service that allows to search, share, discover and create GIFs on the Internet. This project's goal is to test Flutter WEB features.</p>
+<p> A simple GIF searcher based on Giphy API, which is a service that allows to search, share, discover and create GIFs on the Internet.</p>
 
 <!-- description section-->
 
@@ -18,4 +18,4 @@
 
 # Giphy
 
-<p> If you want to know more about Giphy, check this <a href="https://support.giphy.com/hc/en-us/sections/360002879511-About-GIPHY">link</a>>.</p
+<p> If you want to know more about Giphy, check this <a href="https://support.giphy.com/hc/en-us/sections/360002879511-About-GIPHY">link</a>>.</p>
