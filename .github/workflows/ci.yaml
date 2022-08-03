@@ -1,0 +1,40 @@
+name: ci
+on: [push]
+jobs:
+  build:
+    name: Flutter build
+    runs-on: ubuntu-latest
+    env:
+      my_secret: ${{secrets.DEV_CI}}
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+      - run: flutter config --enable-web
+      - run: flutter pub get
+      - run: flutter build web
+      - name: Archive Development Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: web-build
+          path: build/web
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: web-build
+      - name: Display structure of build files
+        run: ls -R
+        working-directory: ./web
+      - name: Deploy to GH Pages
+        run: |
+          cd build/web
+          git init
+          git config --global user.email rsoares.monteiro10@gmail.com
+          git config --global user.name rsoares10
+          git status
+          git remote add origin https://${{secrets.DEV_CI}}@github.com/rsoares10-flutter/gif-searcher.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "update"
+          git push origin gh-pages -f
