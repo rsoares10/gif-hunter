@@ -8,6 +8,12 @@
     <img height="280" src="readme-images/app-sample.png">
 </p>
 
+<!-- Usage section -->
+
+# Usage
+
+<p>Just enter a keyword in the search bar, then check out the results. Clicking on an image will take you to the image's own page. You can search for anything.</p>
+
 <!--Page gh-pages deploy link section-->
 
 # Interactive test
