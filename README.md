@@ -5,7 +5,7 @@
 <p> A simple GIF searcher based on Giphy API, which is a service that allows to search, share, discover and create GIFs on the Internet.</p>
 
 <p float="left" align="center">
-    <img height="4000" src="readme-images/app-sample.png">
+    <img src="readme-images/app-sample.png">
 </p>
 
 <!-- Usage section -->
