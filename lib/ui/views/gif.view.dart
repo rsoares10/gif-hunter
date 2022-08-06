@@ -9,8 +9,9 @@ class GifView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff4C4E52),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff2E3033),
         title: Text(
           _gifData['title'],
           style: TextStyle(color: Colors.white),
@@ -28,7 +29,6 @@ class GifView extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.black,
       body: Center(
         child: Image.network(_gifData['images']['fixed_height']['url']),
       ),
