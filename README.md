@@ -1,14 +1,12 @@
+<!-- description section-->
+
 # GIF Searcher
 
 <p> A simple GIF searcher based on Giphy API, which is a service that allows to search, share, discover and create GIFs on the Internet.</p>
 
-<!-- description section-->
-
-<!--
 <p float="left" align="center">
-    <img height="280" src="readme-images/full-screen.png">
-    <img height="280" src="readme-images/small-screen.png">
-</p -->
+    <img height="280" src="readme-images/app-sample.png">
+</p>
 
 <!--Page gh-pages deploy link section-->
 
