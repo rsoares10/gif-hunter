@@ -30,9 +30,10 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: Color(0xff4C4E52),
       appBar: AppBar(
-        backgroundColor: Color(0xff000000),
-        title: Image(
-          image: NetworkImage('https://developers.giphy.com/branch/master/static/header-logo-8974b8ae658f704a5b48a2d039b8ad93.gif'),
+        backgroundColor: Color(0xff2E3033),
+        title: Image.asset(
+          'images/header.png',
+          height: 40.0,
         ),
         centerTitle: true,
       ),
