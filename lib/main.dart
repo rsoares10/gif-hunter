@@ -4,6 +4,7 @@ import 'ui/views/home.view.dart';
 void main() {
   runApp(
     MaterialApp(
+      title: 'GIF Searcher',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.white,
