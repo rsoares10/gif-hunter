@@ -28,65 +28,74 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xff4C4E52),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff000000),
         title: Image(
           image: NetworkImage('https://developers.giphy.com/branch/master/static/header-logo-8974b8ae658f704a5b48a2d039b8ad93.gif'),
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: TextField(
-              controller: _textEditCtrl,
-              onSubmitted: (text) {
-                setState(() {
-                  _search = text;
-                  _offset = 0;
-                });
-              },
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18.0,
-              ),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Search here',
-                labelStyle: TextStyle(color: Colors.white),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 100.0),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: TextField(
+                controller: _textEditCtrl,
+                onSubmitted: (text) {
+                  setState(() {
+                    _search = text;
+                    _offset = 0;
+                  });
+                },
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Color(0xff6F7378),
+                  border: OutlineInputBorder(),
+                  labelText: 'Search here',
+                  labelStyle: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: FutureBuilder(
-              future: _getGigs(),
-              builder: (context, AsyncSnapshot snapshot) {
-                switch (snapshot.connectionState) {
-                  case ConnectionState.waiting:
-                  case ConnectionState.none:
-                    return Container(
-                      height: 200.0,
-                      width: 200.0,
-                      alignment: Alignment.center,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                        strokeWidth: 5.0,
-                      ),
-                    );
-                  default:
-                    if (snapshot.hasError) {
-                      return Container();
-                    } else {
-                      return _createGigTable(context, snapshot);
-                    }
-                }
-              },
+            Expanded(
+              child: FutureBuilder(
+                future: _getGigs(),
+                builder: (context, AsyncSnapshot snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.waiting:
+                    case ConnectionState.none:
+                      return Container(
+                        height: 200.0,
+                        width: 200.0,
+                        alignment: Alignment.center,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                          strokeWidth: 5.0,
+                        ),
+                      );
+                    default:
+                      if (snapshot.hasError) {
+                        return Container();
+                      } else {
+                        return _createGigTable(context, snapshot);
+                      }
+                  }
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -103,9 +112,9 @@ class _HomeViewState extends State<HomeView> {
     return GridView.builder(
       padding: EdgeInsets.all(10.0),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10.0,
-        mainAxisSpacing: 10.0,
+        crossAxisCount: 6,
+        crossAxisSpacing: 8.0,
+        mainAxisSpacing: 8.0,
       ),
       itemCount: _getCount(snapshot.data['data']),
       itemBuilder: (context, index) {
