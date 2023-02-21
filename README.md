@@ -1,25 +1,48 @@
-<!-- description section-->
+# Gif Hunter
 
-# GIF Searcher
+Gif Hunter is a web application that allows users to search for animated GIF images using keywords. The project uses the Giphy API to retrieve the GIFs, and provides a user-friendly interface for browsing and sharing them on social media.
 
-<p> A simple GIF searcher based on Giphy API, which is a service that allows to search, share, discover and create GIFs on the Internet.</p>
+## Features
 
-<p float="left" align="center">
-    <img src="readme-images/app-sample.png">
-</p>
+- Search for animated GIFs using keywords
+- Display search results in a grid of thumbnail images
+- Click on an image to view a larger version and options for sharing
+- Share GIFs on Telegram, Facebook, and WhatsApp
 
-<!-- Usage section -->
+## Getting Started
 
-# Usage
+To run Gif Hunter on your local machine, follow these steps:
 
-<p>Just enter a keyword in the search bar, then check out the results. Clicking on an image will take you to the image's own page. You can search for anything.</p>
+1. Clone the repository to your local machine.
+2. Navigate to the project directory and run `flutter run` command to start the app.
 
-<!--Page gh-pages deploy link section-->
+## How to Use
 
-# Interactive test
+To search for a GIF, simply type a keyword into the search bar and press Enter. The search results will be displayed in a grid of thumbnail images.
 
-<p> You can check the searcher interactively <a href="https://rsoares10-flutter.github.io/gif-searcher/#/">here</a>.</p>
+To view a larger version of a GIF and share it on social media, simply click on the thumbnail image. You will be taken to a full-screen view of the GIF, where you can select the social media platform you want to share it on.
 
-# Giphy
+## Technologies Used
 
-<p> If you want to know more about Giphy, check this <a href="https://support.giphy.com/hc/en-us/sections/360002879511-About-GIPHY">link</a>.</p>
+- Flutter framework
+- Giphy API
+
+## API Usage
+
+Gif Hunter makes use of the Giphy API to retrieve animated GIF images based on user search queries. The app sends HTTP requests to the Giphy API and receives JSON responses that are parsed and displayed to the user.
+
+## Future Plans
+
+Some future plans for Gif Hunter include:
+
+- Adding more sharing options
+- Adding a feature to save favorite GIFs
+- Adding machine learning capabilities to improve search results
+
+## Contributors
+
+This project was created and maintained by Rafael Monteiro.
+
+## License
+
+Gif Hunter is distributed under the MIT license. See `LICENSE` for more information.
