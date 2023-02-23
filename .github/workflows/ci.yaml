@@ -1,18 +1,20 @@
-name: ci
+name: GIF Hunter CI
 on:
   push:
     branches: [master]
     paths-ignore:
       - "**/README.md"
+      - "**/LICENSE.md"
+      - "**/Dockerfile"
 jobs:
   build:
-    name: Flutter build
+    name: GIF Hunter Builder
     runs-on: ubuntu-latest
     env:
-      my_secret: ${{secrets.DEV_CI}}
+      my_secret: ${{secrets.GIF_HUNTER_CI}}
     steps:
-      - uses: actions/checkout@v1
-      - uses: subosito/flutter-action@v1
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
         with:
           channel: stable
       - run: flutter config --enable-web
@@ -30,14 +32,14 @@ jobs:
       - name: Display structure of build files
         run: ls -R
         working-directory: ./web
-      - name: Deploy to GH Pages
+      - name: GH Pages Deploy
         run: |
           cd build/web
           git init
           git config --global user.email rsoares.monteiro10@gmail.com
           git config --global user.name rsoares10
           git status
-          git remote add origin https://${{secrets.DEV_CI}}@github.com/rsoares10-flutter/gif-searcher.git
+          git remote add origin https://${{secrets.GIF_HUNTER_CI}}@github.com/rsoares10-flutter/gif-hunter.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
