@@ -39,7 +39,7 @@ jobs:
           git config --global user.email rsoares.monteiro10@gmail.com
           git config --global user.name rsoares10
           git status
-          git remote add origin https://${{secrets.GIF_HUNTER_CI}}@github.com/rsoares10-flutter/gif-hunter.git
+          git remote add origin https://${{secrets.GIF_HUNTER_CI}}@github.com/rsoares10/gif-hunter.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
