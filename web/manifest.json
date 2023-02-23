@@ -1,6 +1,6 @@
 {
-    "name": "gif_searcher",
-    "short_name": "gif_searcher",
+    "name": "gif_hunter",
+    "short_name": "gif_hunter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

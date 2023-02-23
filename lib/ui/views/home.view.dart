@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:gif_searcher/ui/views/gif.view.dart';
 import 'package:share/share.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+import 'gif.view.dart';
 
 class HomeView extends StatefulWidget {
   @override
